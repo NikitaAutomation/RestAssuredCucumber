@@ -49,5 +49,12 @@ public class RestAPIStepDefs {
 		System.out.println("The response is " + response.getBody().asString());
  
 	}
+	@Then("the fname should be {string} in response")
+	public void the_fname_should_be_in_response(String name) {
+		
+		Assert.assertEquals(name, response.jsonPath().get("firstName"));
+	    
+	}
+
 
 }
